@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALENTELY- layout 1 Design</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .card {
+            background-color: transparent; /* Transparent background */
+            border: 2px solid black; /* Black outline */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* Stack image and text vertically */
+            text-align: center;
+            padding: 10px; /* Reduced padding */
+            height: 150px; /* Fixed height to reduce card size */
+          }
+      
+          .card img {
+            max-width: 100px; /* Adjust image size if needed */
+            margin-bottom: 5px; /* Add space below the image */
+          }
+      
+          .card p {
+            margin: 0;
+          }
+      
+          .btn-custom {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 5px 10px;
+            font-size: 10px;
+            border: none;
+            border-radius: 25px;
+            margin-bottom: 10px; /* Optional: spacing below button */
+          }
+      
+          h3 {
+            margin-top: 10px;
+          }
+
+
+        .navbar {
+            background-color: darkblue !important; /* Dark blue background */
+            color: white !important; /* Force text color to white */
+        }
+
+        .navbar .nav-link {
+            color: white !important; /* Ensure links are white */
+        }
+
+        .hire-section {
+            background: linear-gradient(90deg, #d66d75, #e29587);
+            padding: 40px 0;
+            color: white;
+            text-align: center;
+            margin-left: calc(-50vw + 50%); /* Adjust left margin */
+            margin-right: calc(-50vw + 50%); /* Adjust right margin */
+            width: 100vw; /* Full width of the viewport */
+        }
+        .hire-section .btn {
+            background-color: white;
+            color: #e29587;
+            border: none;
+        }
+
+
+        .image-grid{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 columns */
+            grid-gap: 25px; /* Gap between images */
+            justify-content: center; /* Center the grid */
+        }
+
+        .image-grid img {
+            width: 85px;
+            height: 55px; /* Adjust height to keep aspect ratio */
+        }
+
+        .stat-card {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 50px; /* Space for vertical line */
+          }
+          .stat-card h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+          }
+          .stat-card p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+          }
+      
+          /* Red hollow circle */
+          .red-dot {
+            width: 16px;
+            height: 16px;
+            border: 2px solid red;
+            border-radius: 50%;
+            position: absolute;
+            top: -15px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white; /* Hollow circle */
+            z-index: 1;
+          }
+      
+          .timeline {
+            position: relative;
+            margin-bottom: 30px;
+          }
+      
+          /* Horizontal red line between dots */
+          .timeline:before {
+            content: '';
+            position: absolute;
+            top: -7px; /* Move up to be between the circles */
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #f28b82; /* Light red color */
+            z-index: 0;
+          }
+      
+          .red-dot-wrapper {
+            position: relative;
+            margin-bottom: 0px;
+          }
+      
+          /* Vertical line from dot to box */
+          .red-dot-wrapper:after {
+            content: '';
+            position: absolute;
+            top: 7px; /* Adjust to connect dot to card */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 40px; /* Adjust height to connect dot with card */
+            background-color: red;
+            z-index: 0;
+          }
+
+        .footer {
+            background-color: #43b881;
+            color: white;
+            padding: 40px 0;
+            margin-left: calc(-50vw + 50%); /* Adjust left margin */
+            margin-right: calc(-50vw + 50%); /* Adjust right margin */
+            width: 100vw; /* Full width of the viewport */
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .contact-btn {
+            background-color: #6044b5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+        <!-- Top Section with logo, search bar, and login button -->
+        <div class="container-fluid py-3">
+            <div class="row align-items-center">
+                <!-- Logo Section -->
+                <div class="col-md-3 d-flex align-items-center">
+                    <img src="Logo.png" class="img-thumbnail" alt="Talentely" width="120" height="120">
+                </div>
+    
+                <!-- Search Bar Section -->
+                <div class="col-md-6">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search Course" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
+    
+                <!-- Login/Register Button Section -->
+                <div class="col-md-3 text-end">
+                    <button type="button" style="background: linear-gradient(to right, blue, violet); color: white; border: none; padding: 5px 5px; font-size: 14px; cursor: pointer; border-radius: 5px; height: 35px;">Login/Register</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Navbar Section -->
+        <nav class="navbar navbar-expand-lg p-2">
+            <div class="container-fluid">
+                <!-- Navbar toggle for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <!-- Dropdown for About Us -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About Us
+                            </a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+    
+                        <!-- Dropdown for Brands -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Brands
+                            </a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+    
+                        <!-- Dropdown for Investors -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Investors
+                            </a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+    
+                        <!-- Dropdown for Corporate -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Corporate
+                            </a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+    
+                        <!-- Dropdown for Newsroom -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Newsroom
+                            </a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+    
+                        <!-- Dropdown for Careers -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Careers
+                            </a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+<!-- Morbi Consequat -->
+<div class="container-fluid" style="background: linear-gradient(to right, #f3e6ff, #ffffff, #d0e6f9);">
+    <div class="container" style="padding-left: 120px;">
+        <div class="row align-items-start mt-4">
+            <!-- Left-side content -->
+            <div class="col-md-6">
+                <button class="btn" style="background-color: #3498db; color: #ffffff; padding: 5px 10px; font-size: 10px; border: none; border-radius: 25px;">MORBI CONSEQUAT</button><br>
+
+                <h1 style="line-height: 1.5;">Unleash Your<br> 
+                    <span style="background: linear-gradient(to right, blue, violet); 
+                                  background-clip: text; 
+                                  -webkit-background-clip: text; 
+                                  -webkit-text-fill-color: transparent; 
+                                  color: transparent;">
+                      Curiosity,
+                    </span> Unleash <br>Your Potential
+                </h1>
+
+                <div class="d-flex">
+                    <img src="Student1.png" alt="Student 1" class="rounded-circle" style="width: 50px; height: 50px; margin-right: -10px;">
+                    <img src="Student2.png" alt="Student 2" class="rounded-circle" style="width: 50px; height: 50px;margin-right: -10px;">
+                    <img src="Student3.png" alt="Student 2" class="rounded-circle" style="width: 50px; height: 50px;">
+                    <div style="margin-left: 10px;">
+                        <h6 style="margin: 0;">Join over 3000+ Students</h6>
+                        <p style="margin: 0;">Have new ideas every week.</p>
+                    </div>
+                </div>
+                <br>
+                <button type="button" style="background: linear-gradient(to right, blue, violet); color: white; border: none; padding: 5px 10px; font-size: 14px; cursor: pointer; border-radius: 5px; height: 40px;">Sign Up Now</button>
+                <button type="button" class="btn btn-outline-dark" style="height: 40px; padding: 5px 10px; font-size: 14px; margin-left: 10px;">Find Courses</button>
+            </div>
+
+            <!-- Right-side content with wider divs -->
+            <div class="col-md-6" style="text-align: left;">
+                <div class="d-flex" style="gap: 20px; justify-content: center;"> <!-- Flexbox for horizontal alignment -->
+                    <div style="background-color: white; padding: 20px; border-radius: 10px; width: 500px;"> <!-- Increase the width to 250px -->
+                        <img src="Course1.png" style="width: 100%; height: auto; border-radius: 10px;">
+
+                        <i class="fas fa-book" style="margin-right: 5px; font-size: 12px;"></i>
+                        <span style="margin-right: 15px; font-size: 12px;">12 Lessons</span>
+                        <i class="fas fa-users" style="margin-right: 5px; font-size: 12px;"></i>
+                        <span style="font-size: 12px;">50 Students</span><br>
+                        <br>
+
+                        <h5>Quisque</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor.</p>
+                        <div class="stars" style="display: flex; justify-content: flex-start; font-size: 10px; color: gold;">
+                            <!-- 5-star rating system -->
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            
+                            <!-- "15 Reviews" next to the stars -->
+                            <p style="margin-left: 5px; color: black;">(15 Reviews)</p>
+                        </div>
+
+                    </div>
+                    <div style="background-color: white; padding: 20px; border-radius: 10px; width: 500px;"> <!-- Increase the width to 250px -->
+                        <img src="Course2.png" style="width: 100%; height: auto; border-radius: 10px;">
+                        
+
+                        <i class="fas fa-book" style="margin-right: 5px; font-size: 12px;"></i>
+                        <span style="margin-right: 15px; font-size: 12px;">12 Lessons</span>
+                        <i class="fas fa-users" style="margin-right: 5px; font-size: 12px;"></i>
+                        <span style="font-size: 12px;">50 Students</span><br>
+                        <br>
+
+                        <h5>Consequat</h5>
+                        <p>Nam pallentesque curae semper mi magna ligula penatibus fringila accumsan mauris quisque.</p>
+                        <div class="stars" style="display: flex; justify-content: flex-start; font-size: 10px; color: gold;">
+                            <!-- 5-star rating system -->
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            
+                            <!-- "15 Reviews" next to the stars -->
+                            <p style="margin-left: 5px; color: black;">(15 Reviews)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+
+  
+  
+
+<!-- Alumni Insights -->
+<br>
+<div class="container">
+    <h5 class="text-center">Alumni Insights, Your Competitive Edge</h5>
+    <br>
+    <div style="display: flex; justify-content: center; gap: 65px;">
+        <img style="width: 10%; height: 10%;" src="Accenture.png" alt="Accenture">
+        <img style="width: 10%; height: 10%;" src="capgemini.png" alt="Capgemini">
+        <img style="width: 10%; height: 10%;" src="Cognizant.png" alt="Cognizant">
+        <img style="width: 10%; height: 10%;" src="Infosys.png" alt="Infosys">
+        <img style="width: 10%; height: 10%;" src="TCS.png" alt="TCS">
+    </div>
+     <hr>
+</div>
+
+<!-- Recognized for Excellence -->
+ <br>
+<div class="container">
+    <h5 class="text-center">Recognized for Excellence</h5>
+    <br>
+    <div style="display: flex; justify-content: center; gap: 65px;">
+        <img style="width: 15%; height: 55%;" src="Ministry.png" alt="Ministry of commerce and industry">
+        <img style="width: 15%; height: 10%;" src="NASSCOM.png" alt="Nasscom">
+        <img style="width: 15%; height: 10%;" src="NSDC.png" alt="N.S.D.C">
+        <img style="width: 15%; height: 10%;" src="StartupIndia.png" alt="StartupIndia">
+    </div>
+</div>
+
+<!-- Phasellus Augue -->  
+<br>
+<div style="background-color: #e3f2fd; padding: 20px; text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <button class="btn" style="background-color: #3498db; color: #ffffff; padding: 5px 10px; font-size: 10px; border: none; border-radius: 25px;">PHASELLUS AUGUE</button>
+        <h3 style="margin-top: 10px;">Shaping Careers and Connecting <br> Top Talent Since 2010</h3>
+        <p>Tempus conubia accumsan diam condimemtum adipiscing maximus nullan <br> conubia dui platea senetus senectus</p>
+    </div>
+
+    <!--Timeline-->
+    <div class="container py-5">
+        <div class="row justify-content-center timeline">
+          <div class="col-md-3">
+            <div class="red-dot-wrapper">
+              <div class="red-dot"></div>
+            </div>
+            <div class="stat-card">
+              <h2>700+</h2>
+              <p>Universities & Colleges on Board</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="red-dot-wrapper">
+              <div class="red-dot"></div>
+            </div>
+            <div class="stat-card">
+              <h2>2600+</h2>
+              <p>Companies Hired with Us</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="red-dot-wrapper">
+              <div class="red-dot"></div>
+            </div>
+            <div class="stat-card">
+              <h2>4500+</h2>
+              <p>Freshers Ready to Deploy</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="red-dot-wrapper">
+              <div class="red-dot"></div>
+            </div>
+            <div class="stat-card">
+              <h2>5000+</h2>
+              <p>TPO Connects across India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--Timeline End -->
+
+
+
+</div>
+
+
+<!-- Aliquam Vel -->  
+<div style="padding: 20px; text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <button class="btn" style="background-color: #3498db; color: #ffffff; padding: 5px 10px; font-size: 10px; border: none; border-radius: 25px;">ALIQUAM VEL</button>
+        <h3 style="margin-top: 10px;">Our Brands</h3>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 10px; justify-items: center; align-items: center; margin: 0 auto; max-width: 800px;">
+            <img src="Image 1.png" alt="Image 1" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 2.png" alt="Image 2" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 3.png" alt="Image 3" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 4.png" alt="Image 4" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 5.png" alt="Image 5" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 6.png" alt="Image 6" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 7.png" alt="Image 7" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 8.png" alt="Image 8" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 9.png" alt="Image 9" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 10.png" alt="Image 10" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 11.png" alt="Image 11" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="Image 12.png" alt="Image 12" style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+    </div>
+</div>
+
+<!-- Vulputate -->
+<div style="padding: 20px; text-align: center; background-color: rgb(34, 171, 118);">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <button class="btn" style="background-color: rgb(20,159,100); color: #ffffff; padding: 5px 10px; font-size: 10px; border: none; border-radius: 25px;">ALIQUAM VEL</button>
+        <h3 style="color: #ffffff">Recognitions and Accreditations</h3>
+        <button style="background-color: rgb(34, 171, 118); color: #ffffff; width: 100px; height: 50px; font-size: 14px; border: 2px solid white; border-radius: 10px; margin-top: 10px;">Know More</button>
+    </div>
+
+    <!-- White background container -->
+    <div class="container" style="background-color: white; padding: 10px; border-radius: 8px; margin-top: 20px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+        <div class="row" style="height: 100%;">
+            <!-- Left Side: Main Image -->
+            <div class="col-md-6 d-flex align-items-stretch">
+                <img src="Main Image.png" alt="Description of the image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+            <!-- Right Side: Content -->
+            <div class="col-md-6" style="padding: 20px;">
+                <h3>Turpis lectus risus odio <br> maximus, tortor ligula mi.</h3>
+                <p>Lobortis orci leo pulvinar blandit arcu donec leo tempor. Ornare, <br> tottor pulvinar, nallum eu metus aenerm</p>
+                <div class="image-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                    <img src="pearson.png" alt="Pearson" style="width: 80%; border-radius: 8px;">
+                    <img src="Ministry.png" alt="Ministry" style="width: 80%; border-radius: 8px;">
+                    <img src="pwc.png" alt="pwc" style="width: 80%; border-radius: 8px;">
+                    <img src="uoc.png" alt="uni" style="width: 80%; border-radius: 8px;">
+                    <img src="NSDC.png" alt="Nsdc" style="width: 80%; border-radius: 8px;">
+                    <img src="Infosys.png" alt="ks" style="width: 80%; border-radius: 8px;">
+                    <img src="NASSCOM.png" alt="nasscom" style="width: 80%; border-radius: 8px;">
+                    <img src="purdue.png" alt="purdue" style="width: 80%; border-radius: 8px;">
+                    <img src="ABB.png" alt="Image 9" style="width: 80%; border-radius: 8px;">
+                </div>
+            </div>
+            <!-- End of Right Part --> 
+        </div>
+    </div>
+
+    <!-- New Container for Two Equal Width Divs Below -->
+    <div style="margin-top: 20px; text-align: center;">
+        <div style="display: flex; gap: 10px; margin: 0 auto; max-width: 1000px;">
+            <div style="flex: 1; background-color: white; padding: 10px; border-radius: 5px;">
+                <img src="Awards 1.png" alt="Image 1" style="width: 100%; height: auto; border-radius: 5px;">
+                <h4 style="text-align: left;">Awards</h4>
+                <p style="text-align: left;">Laoreet per sapien mi viverra; torquent fringilla magna class arcu. Et hac nibg felis purpus turpis nascetur metus gvtzhghh</p>
+            </div>
+            <div style="flex: 1; background-color:  white; padding: 10px; border-radius: 5px;">
+                <h4 style="text-align: left;">Vestibulum hendrerit</h4>
+                <p style="text-align: left;">Efficitur natoque aliqurt congue bibeendrum lectius nostra. plawgzg auhues tirqzurtgv litra portitue conselur</p>
+                
+                <!-- Radio box part -->
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center" style="margin-right: 15px;"> <!-- Inline style for margin -->
+                        <i class="fa-regular fa-circle-check" style="color: darkblue;"></i> 
+                        <span style="margin-left: 5px;">Rhoncus lectus</span>
+                    </div>
+                    <div class="d-flex align-items-center" style="margin-right: 15px;"> <!-- Add margin here -->
+                        <i class="fa-regular fa-circle-check" style="color: darkblue;"></i> 
+                        <span style="margin-left: 5px;">Laoreet aliquam</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fa-regular fa-circle-check" style="color: darkblue;"></i> 
+                        <span style="margin-left: 5px;">Duis lectus</span>
+                    </div> 
+                </div>
+                <!-- End of Radio box part -->
+                <br>
+                <img src="Awards 2.png" alt="Image 2" style="width: 100%; height: auto; border-radius: 5px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Duislectus Section -->
+<div style="background-color: #e3f2fd; padding: 20px; text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <button class="btn btn-custom">DUIS LECTUS</button>
+      <h3>Our Academic Partners</h3>
+
+      <!-- Cards with Arrows Container -->
+      <div class="container mt-5 d-flex justify-content-between align-items-center">
+        <!-- Left Arrow -->
+        <i class="fa-solid fa-circle-arrow-left" style="font-size: 30px; color: blue;"></i>
+
+        <!-- Cards Container -->
+        <div class="row g-0"> <!-- g-0 removes the gutter (spacing) -->
+          <!-- Card 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <img src="VIT.png" class="img-fluid" alt="VIT Logo">
+              <p>Vellore Institute of Technology</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <img src="ssn.png" class="img-fluid" alt="SSN Logo">
+              <p>SSN College of Engineering</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <img src="Thapar.png" class="img-fluid" alt="Thapar Logo">
+              <p>Thapar Institute</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <img src="BITS.png" class="img-fluid" alt="BITS Pilani Logo">
+              <p>BITS Pilani</p>
+            </div>
+          </div>
+        </div>
+        <!-- Right Arrow -->
+        <i class="fa-solid fa-circle-arrow-right" style="font-size: 30px; color: blue;"></i>
+      </div>
+      <!-- End of Cards Container -->
+    </div>
+</div>
+
+
+
+<!-- Eges--> 
+<div class="container my-5 text-center">
+    <h2>Our Top Talent, Helping You Reach Yours</h2>
+    <br>
+    <div class="row">
+        <!-- Left Side: Main Trainer Image -->
+        <div class="col-lg-4 d-flex flex-column align-items-center">
+            <img src="Student1.png" class="img-fluid" alt="Main Trainer Image" style="width: 250px; height: 300px;">
+            <div class="mt-3">
+                <h5>Sapien Luctus</h5>
+                <p>Porta sagittis</p>
+            </div>
+        </div>
+        
+        <!-- Center: Description -->
+        <div class="col-lg-4">
+            <h5>Trainers are alumni of IITs and Top MNCs</h5>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi impedit perspiciatis nulla temporibus quae odit est voluptate perferendis? Voluptate quas aperiam reiciendis quam odio eligendi veritatis, earum minus libero facilis.</p>
+        </div>
+        
+        <!-- Right Side: Trainer Images -->
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-4 text-center">
+                    <img src="Student4.png" class="img-fluid" alt="Trainer Image 1" style="width: 100%; height: 150px; object-fit: cover;">
+                    <div>Etiam rhoncus</div>
+                    <div>Designation 1</div>
+                </div>
+                <div class="col-4 text-center">
+                    <img src="Student6.png" class="img-fluid" alt="Trainer Image 2" style="width: 100%; height: 150px; object-fit: cover;">
+                    <div>Egestr</div>
+                    <div>Designation 2</div>
+                </div>
+                <div class="col-4 text-center">
+                    <img src="Student7.png" class="img-fluid" alt="Trainer Image 3" style="width: 100%; height: 150px; object-fit: cover;">
+                    <div>Dictum netus</div>
+                    <div>Designation 3</div>
+                </div>
+                <div class="col-4 text-center">
+                    <img src="Student8.png" class="img-fluid" alt="Trainer Image 4" style="width: 100%; height: 150px; object-fit: cover;">
+                    <div>Pulvinar</div>
+                    <div>Designation 4</div>
+                </div>
+                <div class="col-4 text-center">
+                    <img src="Studenta.png" class="img-fluid" alt="Trainer Image 5" style="width: 100%; height: 150px; object-fit: cover;">
+                    <div>Malesduda</div>
+                    <div>Designation 5</div>
+                </div>
+                <div class="col-4 text-center">
+                    <img src="Studentb.png" class="img-fluid" alt="Trainer Image 6" style="width: 100%; height: 150px; object-fit: cover;">
+                    <div>Vivamus nibh</div>
+                    <div>Designation 6</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Other Reviews--> 
+<div style="background-color: #f0f8ff; padding: 20px 0;">
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <!-- Testimonial Section -->
+            <div class="col-md-6">
+                <div class="testimonial">
+                    <!-- Quotation Marks and Stars -->
+                    <div class="d-flex align-items-center mb-4">
+                        <span class="display-1 text-muted mr-3">“</span>
+                        <div>
+                            <span class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Testimonial Text -->
+                    <p class="lead">
+                        Ante velit euismod nec ultrices ante urna condimentum habitasse. Vehicula lobortis tellus malesuada quisque tincidunt nostra bibendum taciti.
+                    </p>
+                    <p class="text-muted">Facilisi suspendisse condimentum.</p>
+                </div>
+            </div>
+
+            <!-- Image Grid Section -->
+            <div class="col-md-6">
+                <div class="row justify-content-center">
+                    <!-- First Row -->
+                    <div class="col-4 p-1 d-flex justify-content-center">
+                        <div class="bg-white" style="border: 1px solid #ddd;">
+                            <img src="Student1.png" alt="Person 1" class="rounded" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-4 p-1 d-flex justify-content-center">
+                        <div class="bg-white" style="border: 1px solid #ddd;">
+                            <img src="Student4.png" alt="Person 2" class="rounded" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-4 p-1 d-flex justify-content-center">
+                        <div class="bg-white" style="border: 1px solid #ddd;">
+                            <img src="Student3.png" alt="Person 3" class="rounded" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <!-- Second Row -->
+                    <div class="col-4 p-1 d-flex justify-content-center">
+                        <div class="bg-white" style="border: 1px solid #ddd;">
+                            <img src="Studentb.png" alt="Person 4" class="rounded" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-4 p-1 d-flex justify-content-center">
+                        <div class="bg-white" style="border: 1px solid #ddd;">
+                            <img src="Student5.png" alt="Person 5" class="rounded" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-4 p-1 d-flex justify-content-center">
+                        <div class="bg-white" style="border: 1px solid #ddd;">
+                            <img src="Student6.png" alt="Person 6" class="rounded" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <!-- Third Row (Center 2 images) -->
+                    <div class="col-4 p-1 offset-2 d-flex justify-content-center">
+                        <div class="bg-white" style="border: 1px solid #ddd;">
+                            <img src="Student7.png" alt="Person 7" class="rounded" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-4 p-1 d-flex justify-content-center">
+                        <div class="bg-white" style="border: 1px solid #ddd;">
+                            <img src="Student8.png" alt="Person 8" class="rounded" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Vehicula Lobortis -->
+    <br>
+<div>
+    <button class="btn rounded-pill text-white d-block mx-auto" style="background-color: #3498db;">VEHICULA LOBORTIS</button><br>
+    <h5 class="text-center">2500+ Companies Hire our <br> Pre-trained Candidates</h5>
+    <p class="text-center">Fames mauris luctus phasellus consectetur natoque proin phasellus.<br>commodo litora commodo varius magna lacus.</p>
+    <br>
+    <div class="container">
+        <div class="image-grid">
+            <img src="Cognizant.png" alt="Cognizant">
+            <img src="Cisco.png" alt="Cisco">
+            <img src="Bank of America.png" alt="Bank of America">
+            <img src="Amazon.png" alt="Amazon">
+            <img src="Accenture.png" alt="Accenture">
+            <img src="Wipro.png" alt="Wipro">
+            <img src="Visa.png" alt="Visa">
+            <img src="Walmart.png" alt="Walmart">
+            <img src="Citi.png" alt="Citi">
+            <img src="pwc.png" alt="PWC">
+            <img src="DE.png" alt="DEShaw&Co">
+            <img src="dyte.png" alt="dyte">
+            <img src="Juspay.png" alt="Juspay">
+            <img src="IBM.png" alt="IBM">
+            <img src="frac.png" alt="fractal">
+            <img src="SAP.png" alt="Sap">
+            <img src="Honda.png" alt="Honda">
+            <img src="Fide.png" alt="Fidelity">
+            <img src="Deloitte.png" alt="Deloitte">
+            <img src="ABB.png" alt="ABB">
+            <img src="Anna.png" alt="Anna">
+            <img src="EY.png" alt="EY">
+            <img src="NVD.png" alt="NVD">
+            <img src="cerner.png" alt="cerner">
+            <img src="freshworks.png" alt="freshworks">
+            <img src="Daimler.png" alt="Daimler">
+            <img src="BCG.png". alt="BCG">
+            <img src="genpact.png" alt="genpact">
+            <img src="GE.png" alt="GE">
+            <img src="adani.png" alt="Adani">
+        </div>
+    </div>
+</div>
+<br>
+    
+
+
+
+
+<!-- Hire Section -->
+<section class="hire-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h1>Hire From Us</h1>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <p>Dolor aenean sem erat mi nec est lacinia nulla efficitur cubilia habitant fames consequat. Accumsan tristique lacinia magn.</p>
+            </div>
+            
+            <div class="col-md-4 text-center">
+                <a href="#" class="btn btn-lg">Know More →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-4">
+                <h5><strong>TALENTELY</strong><br>
+                    <small>a Veranda Enterprise</small>
+                </h5>
+                <p>Consequat pellentesque potenti porta parturient; lacinia nisi inceptos. Penatibus volutpat tortor primis natoque phasellus ultrices facilisi.</p>
+                <a href="#" class="contact-btn">Contact With Us →</a>
+            </div>
+
+            <!-- Middle Column (Quick Links) -->
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Brands</a></li>
+                            <li><a href="#">Investors</a></li>
+                            <li><a href="#">Corporates</a></li>
+                            <li><a href="#">Newsroom</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Become Teacher</a></li>
+                            <li><a href="#">Blog & Media</a></li>
+                            <li><a href="#">Instructor</a></li>
+                            <li><a href="#">Events</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column (Contact Info) -->
+            <div class="col-md-4">
+                <h5>Get Contact</h5>
+                <p>Phone: (406) 555-0120</p>
+                <p>Email: example@gmail.com</p>
+                <p>Location: Dui gravida ut viverra montes primis aliquam.</p>
+                <div>
+                    <!-- Social Media Icons -->
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Footer Bottom -->
+<div class="footer-bottom d-flex justify-content-between align-items-center py-3" style="background-color:white; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); width: 100vw; position: relative; bottom: 0;">
+    <p class="mb-0" style="margin: 0;">Copyright 2024 © Talentely. Concept by repute.</p>
+    <p class="mb-0" style="margin: 0;">
+        <a href="#" style="color: black; text-decoration: none;">Terms of service</a> | 
+        <a href="#" style="color: black; text-decoration: none;">Privacy policy</a> | 
+        <a href="#" style="color: black; text-decoration: none;">Subscription</a> | 
+        <a href="#" style="color: black; text-decoration: none;">Login & Register</a>
+    </p>
+</div>
+
+
+<!-- Font Awesome for star icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
